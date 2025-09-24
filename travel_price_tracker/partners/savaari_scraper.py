@@ -76,6 +76,8 @@ def scrape_savaari():
             except Exception as e:
                 continue
         print(data)
+        df = pd.DataFrame(data)
+        df.to_csv("data/savaari_car_prices.csv", index=False)
     except Exception as e:
         print(f"Error during Scraping {e}\n")
     
